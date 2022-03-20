@@ -18,7 +18,6 @@ cursor = base.cursor()
 #cursor.execute( "INSERT INTO data VALUES( ?, ? )", ( "pawlik1981", "qwerty4321"))
 #base.commit()
 
-
 request = cursor.execute( "SELECT * FROM record" ).fetchall()
 print( request )
 
