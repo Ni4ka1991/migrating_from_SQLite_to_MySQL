@@ -17,11 +17,11 @@ def create_connection_SQLite( path ):
 
     return connection
 
-
+'''
 def create_connection_MySQL( host_name, user_name, user_password, database ):
     connection = None
     try:
-        mydb = mqlc.connect( host_name, user_name, user_password, database )
+        mydb = mqlc.connect( host = host_name, user = user_name, password = user_password, database = database_name )
         print("Connection to Mariadb DB successful")
         cursor = mydb.cursor()
         cursor.execute( "SELECT * FROM ALL_PLUGINS" )
@@ -29,7 +29,7 @@ def create_connection_MySQL( host_name, user_name, user_password, database ):
         print( f"Are you forget to srart mariadb server?: {err}" )
     
     return connection
-
+'''
 
 def create_execute( connection, query ):
         cursor = connection.cursor()
@@ -45,5 +45,15 @@ def create_execute( connection, query ):
 base_SQLite = create_connection_SQLite( path )
 a = create_execute( base_SQLite, "SELECT name, dtype FROM domain" )
 print( a )
-'''
+
 base_MySQL = create_connection_MySQL( host_name, user_name, user_password, "information_schema" )
+'''
+
+
+#mydb = mqlc.connect( host = host_name, user = user_name, password = user_password, database = database_name )
+mydb = mqlc.connect( host = "localhost", user = "root", password = "Rekt,zrf_2020", database = "information_schema" )
+#cursor = mydb.cursor()
+#cursor.execute( "SELECT * FROM ALL_PLUGINS" )
+#request_mysql = cursor.fetchall()
+#print( request_mysql )
+
